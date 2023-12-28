@@ -1,4 +1,5 @@
-FROM cgr.dev/chainguard/jdk
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:17-jdk-slim
+
+COPY target/rinha-backend-0.0.1-SNAPSHOT.jar rinha-backend-1.0.0.jar
+
+ENTRYPOINT ["java","-jar","/rinha-backend-1.0.0.jar"]
